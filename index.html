@@ -1,95 +1,11 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>Neo Club Digital</title>
   <style>
-
 @import url('https://fonts.cdnfonts.com/css/amiga-forever');
     body {
-	.container {
- 	 display: flex;
-	}
-
-	#col-1 {
-  	background-color: blue;
- 	 flex: 1;
-	}
-
-	#col-2 {
-  	background-color: blue;
-  	flex: 1;
-	}
-
-	p2 {
-        font-size: 18px;
-        text-align: justify;
-        margin-bottom: 10px;
-	text-align: center;
-    }
-
-
-            background-color: white;
-            margin: 0;
-            overflow: hidden;
-        }
-        
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        .text-container {
-            position: relative;
-            font-family: 'Courier New', monospace;
-            font-size: 30px;
-            text-transform: uppercase;
-            color: black;
-            animation: fade-in 2s ease-in-out;
-        }
-        
-        .text-container span {
-            display: inline-block;
-            position: relative;
-            transition: transform 0.5s ease;
-        }
-        
-        .text-container span:before,
-        .text-container span:after {
-            content: attr(data-char);
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .text-container span:before {
-            transform: translate(-3px, 3px);
-        }
-        
-        .text-container span:after {
-            transform: translate(3px, -3px);
-        }
-        
-        .text-container:hover span:before,
-        .text-container:hover span:after {
-            opacity: 1;
-        }
-        
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5);
-            }
-            100% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-        }
 
 
 
@@ -107,12 +23,12 @@
       font-family: "Amiga Forever", sans-serif;
       <!-- text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); -->
 	text-align: center;
-
+	text-decoration: underline dotted;
     }
 
  h1:hover {
       text-decoration: underline dotted;
-	color: #000000;
+	color: #0000ff;
     }
 
     p {
@@ -166,7 +82,7 @@ p2 {
       left: 0;
       width: 100%;
       height: 40px;
-      background-color: blue;
+      background-color: black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -185,21 +101,21 @@ p2 {
 
 
     .gif-container {
-      max-width: 75%;
+      max-width: 25%;
       margin: 0 auto;
     }
 
     .gif-container img {
       width: 100%;
       height: auto;
-}
+
     .img-container {
-	 max-width: 25%;
+	 max-width: 50%;
       margin: 0 auto;
 	}
 
  .img-container img {
-      width: 100%;
+      width: 50%;
       height: auto;
 	}	    
 
@@ -208,47 +124,80 @@ p2 {
 </head>
 <body>
 
-	<div class="img-container">
-    		 <img src="https://i.imgur.com/f8sn0ax.png" alt="GIF">
+  <div class="window">
+
+    <div class="window-inner">
+   
+	 <div class="gif-container">
+    		<img src="https://i.imgur.com/SLccpSJ.gif" alt="GIF">
  	 </div>
-  
-  <p>Acidic hot spring</p>
+
+      <p2>Neo Club Digital is a digital art collective delving into the depths of the ever-evolving digital landscape.</p>
+      <p2>Through our captivating visuals, we challenge conventional norms and inspire new perspectives.</p>
+      <p2>For more information, check out the <a href="#">about</a> page.</p>
+	
+    </div>
+  </div>
+ 
+  <p>bleu281 & mostwrongking - I click to exist - 2023</p>
+
+  <div class="gif-container">
+    <img src="https://assets.objkt.media/file/assets-003/QmdfHzqFzWv5ZCzb7wFgxaMfUQzyNwbYXa2Pnzrmd2bENo/artifact" alt="GIF">
+  </div>
+
+  <p>DanCTRL - David - 2023</p>
+
+  <div class="gif-container">
+    <img src="https://f8n-production-collection-assets.imgix.net/0x9C170e8e616fdBf61934946a282656eE9b24a28D/40/nft.png?q=80&auto=format%2Ccompress&cs=srgb&w=3000&h=3000&fit=max" alt="GIF">
+  </div>
+
+  <p>Datura - Panorama. Dallol - 2023</p>
 
   <div class="gif-container">
     <img src="https://assets.objkt.media/file/assets-003/QmazwTS5yVyPDu322UtNh3Sb2hwqQyd9fivGu7KsdJ9eCR/artifact" alt="GIF">
+  </div>
 
+ <p>Element Lee - Scale and Position - 2023</p>
 
+  <div class="gif-container">
+    <img src="https://f8n-production-collection-assets.imgix.net/0x9D17165BD2Cc9540C1f5032CD35299b9cfBB0840/10/nft.png?q=80&auto=format%2Ccompress&cs=srgb&w=3000&h=3000&fit=max" alt="GIF">
+  </div>
 
-        <div class="text-container">
-            <span data-char="D">D</span>
-            <span data-char="A">A</span>
-            <span data-char="T">T</span>
-            <span data-char="U">U</span>
-            <span data-char="R">R</span>
-            <span data-char="A">A</span>
-            <span>&nbsp;</span>
-<p2>Panorama. Dallol</p>
+   <p>k0ch - Unknown Signals - 2021</p>
 
- 	<section class="container">
- <div id="col-1">
-    <h1><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<</h1>
-</div>
-<div id="col-2">
-  <h1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></h1>
+  <div class="gif-container">
+    <img src="https://res.cloudinary.com/art-blocks/image/fetch/c_limit,w_3840,q_auto/https://media-proxy.artblocks.io/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/142000647.png" alt="GIF">
+  </div>
 
-</div>
-</div>
-</section>
-</div>
-	   
-        </div>
-    </div>
+	<p>Lucas Lejeune - Weird Specimen - 2023</p>
+
+  <div class="gif-container">
+    <img src="https://assets.objkt.media/file/assets-003/QmPFNmjG9aZyV2vnzJiA4cDRJfcXm37qU8zwuRDY2dch6V/artifact" alt="GIF">
+  </div>
+
+  <p>mostwrongking - IT'S TIME TO LOOK AT YOUR SCREEN AGAIN - 2023</p>
+
+  <div class="gif-container">
+    <img src="https://f8n-production-collection-assets.imgix.net/0x87FCFB9171B5a331e2400970A4c2648c5facEbE3/4/nft.gif?q=80&auto=compress&cs=srgb&w=3000&h=3000&fit=max" alt="GIF">
+  </div>
+  
+  <p>Nicholas Dietrich - Equal & Opposite Reaction - 2022</p>
+
+  <div class="gif-container">
+    <img src="https://assets.objkt.media/file/assets-003/QmXLu51TxCWXG2rBJuy2H5ekfALHzCWi94Bj4J458QptqS/artifact" alt="GIF">
+  </div>
+
+  <p>v5mt - Hearts Rainbow - 2021</p>
+
+  <div class="gif-container">
+    <img src="https://assets.objkt.media/file/assets-003/QmVjEtLjvJbRU5YFe4gXK2SC2YzKKhEPZcBEUADymtEQTo/artifact" alt="GIF">
   </div>
 
 
 
 
 
+  <div class="gif-container">
 	
 <div class="taskbar">
     
@@ -263,7 +212,6 @@ p2 {
       <a href="#">mostwrongking</a>
       <a href="#">Nietrich</a>
       <a href="#">v5mtv</a>
-	
    
     </div>
 </body>
