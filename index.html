@@ -1,82 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Neo Club Digital</title>
+  <title>GIF Container Website</title>
   <style>
-@import url('https://fonts.cdnfonts.com/css/amiga-forever');
     body {
-
-
-
-
-   
-     background: linear-gradient(to right, black 0%, black 25%, blue 25%, blue 75%, black 75%, black 100%);
-      color: #000000;
-      font-family: "Courier New", monospace;
+	
+	font-family: "Courier New", monospace;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .gif-container {
+      max-width: 75%;
+      margin: 0 auto;
+     overflow: hidden;
     }
 
-    h1 {
-     font-size: 24px;
-      font-family: "Amiga Forever", sans-serif;
-      <!-- text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); -->
-	text-align: center;
-	text-decoration: underline dotted;
+    .gif-container img {
+      width: 100%;
+      height: auto;
+	object-fit: cover;
+      animation: gif-cycle 8s infinite;
     }
+    
 
- h1:hover {
-      text-decoration: underline dotted;
-	color: #0000ff;
-    }
-
-    p {
-      color: white;
-      font-size: 18px;
-      text-align: justify;
-      margin-bottom: 10px;
-	text-align: center;
-    }
-
-p2 {
-      font-size: 18px;
-      text-align: justify;
-      margin-bottom: 10px;
-	text-align: center;
-    }
-
-    a {
-      color: #000000;
-      text-decoration: none;
-	text-decoration: underline dotted;
-    }
-
-    a:hover {
-      text-decoration: underline dotted;
-	color: #0000ff;
-    }
-
-   .window {
-      background: linear-gradient(45deg, black 25%, white 25%, white 50%, black 50%, black 75%, white 75%, white);
-      background-size: 2.83px 2.83px;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      margin-bottom: 20px;
-      text-align: center;
-      max-width: 50%;
-      margin: 0 auto; /* Center the window */
-    }
-
-    .window-inner {
-      background-color: #dbdbdb;
-      padding: 20px;
-      border-radius: 5px;
-    }
+@keyframes gif-cycle {
+  0% {
+    opacity: 1;
+    z-index: 3;
+  }
+  16.666% {
+    opacity: 0;
+    z-index: 2;
+  }
+  33.333% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50% {
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 1;
+    z-index: 3;
+  }
+}
 
 
-    .taskbar {
+    
+     .taskbar {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -98,108 +77,32 @@ p2 {
       text-decoration: none;
     }
 
+    
+    p2 {
+        font-size: 30px;
+        text-align: justify;
+        margin-bottom: 10px;
+		text-align: center;
+     }
+    
 
-
-    .gif-container {
-      max-width: 25%;
-      margin: 0 auto;
-    }
-
-    .gif-container img {
-      width: 100%;
-      height: auto;
-
-    .img-container {
-	 max-width: 50%;
-      margin: 0 auto;
-	}
-
- .img-container img {
-      width: 50%;
-      height: auto;
-	}	    
-
-    }
+    
   </style>
 </head>
 <body>
-
-  <div class="window">
-
-    <div class="window-inner">
-   
-	 <div class="gif-container">
-    		<img src="https://i.imgur.com/SLccpSJ.gif" alt="GIF">
- 	 </div>
-
-      <p2>Neo Club Digital is a digital art collective delving into the depths of the ever-evolving digital landscape.</p>
-      <p2>Through our captivating visuals, we challenge conventional norms and inspire new perspectives.</p>
-      <p2>For more information, check out the <a href="#">about</a> page.</p>
-	
-    </div>
-  </div>
  
-  <p>bleu281 & mostwrongking - I click to exist - 2023</p>
-
-  <div class="gif-container">
-    <img src="https://assets.objkt.media/file/assets-003/QmdfHzqFzWv5ZCzb7wFgxaMfUQzyNwbYXa2Pnzrmd2bENo/artifact" alt="GIF">
-  </div>
-
-  <p>DanCTRL - David - 2023</p>
-
-  <div class="gif-container">
-    <img src="https://f8n-production-collection-assets.imgix.net/0x9C170e8e616fdBf61934946a282656eE9b24a28D/40/nft.png?q=80&auto=format%2Ccompress&cs=srgb&w=3000&h=3000&fit=max" alt="GIF">
-  </div>
-
-  <p>Datura - Panorama. Dallol - 2023</p>
-
-  <div class="gif-container">
-    <img src="https://assets.objkt.media/file/assets-003/QmazwTS5yVyPDu322UtNh3Sb2hwqQyd9fivGu7KsdJ9eCR/artifact" alt="GIF">
-  </div>
-
- <p>Element Lee - Scale and Position - 2023</p>
-
-  <div class="gif-container">
-    <img src="https://f8n-production-collection-assets.imgix.net/0x9D17165BD2Cc9540C1f5032CD35299b9cfBB0840/10/nft.png?q=80&auto=format%2Ccompress&cs=srgb&w=3000&h=3000&fit=max" alt="GIF">
-  </div>
-
-   <p>k0ch - Unknown Signals - 2021</p>
-
-  <div class="gif-container">
-    <img src="https://res.cloudinary.com/art-blocks/image/fetch/c_limit,w_3840,q_auto/https://media-proxy.artblocks.io/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/142000647.png" alt="GIF">
-  </div>
-
-	<p>Lucas Lejeune - Weird Specimen - 2023</p>
-
-  <div class="gif-container">
-    <img src="https://assets.objkt.media/file/assets-003/QmPFNmjG9aZyV2vnzJiA4cDRJfcXm37qU8zwuRDY2dch6V/artifact" alt="GIF">
-  </div>
-
-  <p>mostwrongking - IT'S TIME TO LOOK AT YOUR SCREEN AGAIN - 2023</p>
-
-  <div class="gif-container">
-    <img src="https://f8n-production-collection-assets.imgix.net/0x87FCFB9171B5a331e2400970A4c2648c5facEbE3/4/nft.gif?q=80&auto=compress&cs=srgb&w=3000&h=3000&fit=max" alt="GIF">
-  </div>
   
-  <p>Nicholas Dietrich - Equal & Opposite Reaction - 2022</p>
+    <div class="gif-container">
 
-  <div class="gif-container">
-    <img src="https://assets.objkt.media/file/assets-003/QmXLu51TxCWXG2rBJuy2H5ekfALHzCWi94Bj4J458QptqS/artifact" alt="GIF">
-  </div>
-
-  <p>v5mt - Hearts Rainbow - 2021</p>
-
-  <div class="gif-container">
-    <img src="https://assets.objkt.media/file/assets-003/QmVjEtLjvJbRU5YFe4gXK2SC2YzKKhEPZcBEUADymtEQTo/artifact" alt="GIF">
-  </div>
+    <img src="https://assets.objkt.media/file/assets-003/QmazwTS5yVyPDu322UtNh3Sb2hwqQyd9fivGu7KsdJ9eCR/artifact" alt="GIF 2">
 
 
-
-
-
-  <div class="gif-container">
+    <div class="gif-text">
+      <p2>D A T U R A</p2> 
+      <p>Panorama. Dallol</p>
+    </div>
 	
-<div class="taskbar">
+    <div class="taskbar">
     
   
     <a href="#">bleu281</a>
@@ -214,5 +117,7 @@ p2 {
       <a href="#">v5mtv</a>
    
     </div>
+
+  </div>
 </body>
 </html>
