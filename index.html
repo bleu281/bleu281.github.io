@@ -13,6 +13,22 @@
       padding: 20px;
     }
 
+
+	#frame-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  
+}
+
+#frame-image {
+  width: 75%; /* Adjust the width as needed */
+  height: 75%;
+  border: 1px solid #ccc;
+}
+
     .center-text {
       position: absolute;
       top: 50%;
@@ -26,6 +42,7 @@
     .gif-container {
       max-width: 50%;
       margin: 0 auto;
+	
     }
 
     .gif-container img {
@@ -138,12 +155,25 @@
       if (content.style.display === 'none') {
         content.style.display = 'block';
         content2.style.display = 'none';
-        minimizeButton.textContent = 'BIO';
+        minimizeButton.textContent = 'SHOW!';
       } else {
         content.style.display = 'none';
         content2.style.display = 'block';
-        minimizeButton.textContent = 'ART';
+        minimizeButton.textContent = 'X';
       }
+  // Update frame image source based on the last interacted window
+  const frameImage = document.getElementById('frame-image');
+  switch (elementId) {
+    case 'window1':
+      frameImage.src = 'https://i.imgur.com/MwhOVKU.jpg';
+      break;
+    case 'window2':
+      frameImage.src = 'https://assets.objkt.media/file/assets-003/QmUbpv9bDfyE3bBr9qptSRZtQ5ARYT1axMAJ8sbBJGEwei/artifact';
+      break;
+    // Add more cases for other windows as needed
+    default:
+      frameImage.src = 'https://i.imgur.com/MwhOVKU.jpg'; // Clear the frame image source if no match
+  }
     }
   </script>
 </head>
@@ -153,15 +183,15 @@
   <div class="window" id="window1" style="top: 20px; left: 20px;" >
     <div class="window-header">
       bleu281
-      <span class="window-button" onclick="toggleMinimize('window1')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window1')">SHOW!</span>
     </div>
     <div class="window-content">
       <div class="gif-container">
-        <img src="https://assets.objkt.media/file/assets-003/Qmf2TcXzk21bCzXTkCtUnDGyvWnhrxK4cb8fWbbLiv1fjb/artifact" alt="GIF">
+        <img src="https://i.imgur.com/FSQJ0UL.png" alt="GIF">
       </div>
     </div>
     <div class="window-content-2">
-      <p>BIO BLEU</p>
+      <p>bleu281 is a german digital artist creating unusual patterns and </p>
     </div>
   </div>
 
@@ -169,7 +199,7 @@
   <div class="window" id="window2" style="top: 50px; left: 50px;" >
     <div class="window-header">
       DanCTRL
-      <span class="window-button" onclick="toggleMinimize('window2')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window2')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -186,7 +216,7 @@
   <div class="window" id="window3" style="top: 80px; left: 80px;">
     <div class="window-header">
       Datura
-      <span class="window-button" onclick="toggleMinimize('window3')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window3')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -203,7 +233,7 @@
   <div class="window" id="window4" style="top: 110px; left: 110px;">
     <div class="window-header">
       Element Lee
-      <span class="window-button" onclick="toggleMinimize('window4')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window4')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -219,7 +249,7 @@
   <div class="window" id="window5" style="top: 140px; left: 140px;">
     <div class="window-header">
       Francoise Gamma
-      <span class="window-button" onclick="toggleMinimize('window5')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window5')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -235,7 +265,7 @@
   <div class="window" id="window6" style="top: 170px; left: 170px;">
     <div class="window-header">
       k0ch
-      <span class="window-button" onclick="toggleMinimize('window6')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window6')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -251,7 +281,7 @@
   <div class="window" id="window7" style="top: 200px; left: 200px;">
     <div class="window-header">
       Kosmotekton
-      <span class="window-button" onclick="toggleMinimize('window7')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window7')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -267,7 +297,7 @@
   <div class="window" id="window8" style="top: 230px; left: 230px;">
     <div class="window-header">
       Laura Adel
-      <span class="window-button" onclick="toggleMinimize('window8')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window8')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -283,7 +313,7 @@
   <div class="window" id="window9" style="top: 260px; left: 260px;">
     <div class="window-header">
       Lucas Lejeune
-      <span class="window-button" onclick="toggleMinimize('window9')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window9')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -299,7 +329,7 @@
   <div class="window" id="window10" style="top: 290px; left: 290px;">
     <div class="window-header">
       mostwrongking
-      <span class="window-button" onclick="toggleMinimize('window10')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window10')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -315,7 +345,7 @@
   <div class="window" id="window11" style="top: 320px; left: 320px;">
     <div class="window-header">
       Nicholas Dietrich
-      <span class="window-button" onclick="toggleMinimize('window11')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window11')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -331,7 +361,7 @@
   <div class="window" id="window12" style="top: 350px; left: 350px;">
     <div class="window-header">
       ugo
-      <span class="window-button" onclick="toggleMinimize('window12')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window12')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -347,7 +377,7 @@
   <div class="window" id="window13" style="top: 380px; left: 380px;">
     <div class="window-header">
       v5mtv
-      <span class="window-button" onclick="toggleMinimize('window13')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window13')">SHOW!</span>
     </div>
     <div class="window-content">
 	<div class="gif-container">
@@ -363,7 +393,7 @@
   <div class="window" id="window14" style="top: 420px; left: 420px;">
     <div class="window-header">
       Zhecon
-      <span class="window-button" onclick="toggleMinimize('window14')">BIO</span>
+      <span class="window-button" onclick="toggleMinimize('window14')">SHOW!</span>
     </div>
     <div class="window-content">
       <div class="gif-container">
@@ -376,11 +406,11 @@
     </div>
   </div>
 
+<p><center> Computer Love Collective </center></p>
+<div id="frame-container">
+  <img id="frame-image" src="" alt="Frame Image">
+</div>
 
-  <div class="center-text">
- 
-    <p>Computer Love Collective</p>
-  </div>
 
   <div class="taskbar">
     <a href="#">bleu281</a>
