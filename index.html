@@ -15,6 +15,11 @@
 
 
 	#frame-container {
+
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85vh;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -24,15 +29,28 @@
 }
 
 #default-image {
-	width: 75%; /* Adjust the width as needed */
-  height: 75%;
+	      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85vh;
   border: 1px solid #ccc;
 }
 
+h1 {
+      display: flex;
+      justify-content: right;
+      align-items: right;
+
+}
+
+
 #frame-image {
-  width: 75%; /* Adjust the width as needed */
-  height: 75%;
-  border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85vh;
+
+  border: 20px solid #ccc;
 }
 
     .center-text {
@@ -67,6 +85,7 @@
       justify-content: center;
       align-items: center;
       padding: 0 20px;
+      z-index: 30;
     }
 
     .taskbar a {
@@ -79,6 +98,9 @@
     }
 
     .window {
+
+	
+
       position: absolute;
       width: 500px;
       height: 400px;
@@ -186,8 +208,7 @@
 </head>
 <body>
 
-
-  <div class="window" id="window1" style="top: 20px; left: 20px;" >
+<div class="window" id="window1" style="top: 20px; left: 20px;" >
     <div class="window-header">
       bleu281
       <span class="window-button" onclick="toggleMinimize('window1')">SHOW!</span>
