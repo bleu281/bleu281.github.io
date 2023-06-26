@@ -23,18 +23,45 @@
             padding: 20px;
         }
         
-        #taskbar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40px;
-            background-color: white;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0 10px;
-        }
+
+
+	.flowing-text {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: flowText 5s linear infinite;
+      color: white;
+    }
+
+    @keyframes flowText {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }	
+
+
+    .taskbar {
+
+display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 5vh;
+
+
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      //height: 40px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 30;
+    }
         
         .icon {
             display: flex;
@@ -72,9 +99,9 @@
 
 
 	    display: grid;
-            background-color: red;
+          
             width: 80vh; /* Increased width for a bigger framed image */
-            height: 55vh; /* Increased height for a bigger framed image */
+            height: 50vh; /* Increased height for a bigger framed image */
             margin: 40px 20px; /* Adjusted margin to separate the framed image from the icons */
             padding: 10px;
             border: 2px solid;
@@ -97,7 +124,7 @@
 	    display: grid;
             background-color: red;
             width: 80vh; /* Increased width for a bigger framed image */
-            height: 30vh; /* Increased height for a bigger framed image */
+            height: 25vh; /* Increased height for a bigger framed image */
             margin: 40px 20px; /* Adjusted margin to separate the framed image from the icons */
             padding: 10px;
             border: 2px solid;
@@ -117,7 +144,7 @@
         .imageframe {
             background-color: black;
             width: 50vh; /* Increased width for a bigger framed image */
-            height: 50vh; /* Increased height for a bigger framed image */
+            height: 45vh; /* Increased height for a bigger framed image */
             margin: 40px 10px; /* Adjusted margin to separate the framed image from the icons */
             padding: 10px;
             border: 2px solid;
@@ -128,7 +155,7 @@
 	.imageframe2 {
             background-color: black;
             width: 75vh; /* Increased width for a bigger framed image */
-            height: 25vh; /* Increased height for a bigger framed image */
+            height: 20vh; /* Increased height for a bigger framed image */
             margin: 40px 10px; /* Adjusted margin to separate the framed image from the icons */
             padding: 10px;
             border: 2px solid;
@@ -138,7 +165,7 @@
 	.imageframe3 {
             background-color: black;
             width: 10vh; /* Increased width for a bigger framed image */
-            height: 50vh; /* Increased height for a bigger framed image */
+            height: 45vh; /* Increased height for a bigger framed image */
             margin: 40px 10px; /* Adjusted margin to separate the framed image from the icons */
             padding: 10px;
             border: 2px solid;
@@ -244,6 +271,12 @@
         <p id="bio-text">Francoise Gamma is a digitally embodied entity using the internet to draw animated GIFS (for Netscape 3.04). Its work has appeared on Kanye  West's blog,  in solo exhibitions, and all around the WWW.</p>	
     </div>
 </div>
+
+  <div class="taskbar">
+	<div class="flowing-text">
+    N3XTWAVE Collective
+  </div>
+  </div>
 
 
     <script>
