@@ -1,506 +1,262 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8">
-  <title>Computer Love Collective</title>
-  <style>
+    <title>N3XTWAVE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", monospace;
+            background-color: blue;
+        }
+        
+        p {
+            color: white;
+        }
+        
+        #desktop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 40px; /* Account for taskbar height */
+            padding: 20px;
+        }
+        
+        #taskbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background-color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 10px;
+        }
+        
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px; /* Increased width to accommodate label */
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .icon img {
+            width: 50px;
+            height: 50px;
+            margin-top: 10px;
+        }
+        
+        .icon label {
+            margin-top: 10px; /* Adjusted margin to align label below the icon */
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .icon:hover {
+            background-color: #eee;
+        }
+        
+        .icon:focus {
+            outline: none;
+            box-shadow: 0 0 5px #000;
+        }
+        
+	  .grid-container {
 
-    body {
-      background: linear-gradient(to right, blue 0%, blue 25%, blue 25%, blue 75%, blue 75%, blue 100%);
-      color: #000000;
-      font-family: "Courier New", monospace;
-      margin: 0;
-      padding: 20px;
-    }
 
+	    display: grid;
+            background-color: red;
+            width: 80vh; /* Increased width for a bigger framed image */
+            height: 60vh; /* Increased height for a bigger framed image */
+            margin: 40px 20px; /* Adjusted margin to separate the framed image from the icons */
+            padding: 10px;
+            border: 2px solid;
 
-	#frame-container {
+            margin-left: auto;
+            margin-right: 40px;
 
-        display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 85vh;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  
-}
-
-#default-image {
-	      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 85vh;
-  border: 1px solid #ccc;
-}
-
-h1 {
-      display: flex;
-      justify-content: right;
-      align-items: right;
-
-}
-
-
-#frame-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 85vh;
-
-  border: 20px solid #ccc;
-}
-
-    .center-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 40px;
-      font-weight: bold;
-      z-index: 5;
-    }
-
-    .gif-container {
-      max-width: 50%;
-      margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 10px;
+            background-color: #f1f1f1;
+            padding: 10px;
 	
-    }
+        }
 
-    .gif-container img {
-      width: 100%;
-      height: auto;
-    }
-
-    .taskbar {
-
-display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 5vh;
+	.grid-container2 {
 
 
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      //height: 40px;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 20px;
-      z-index: 30;
-    }
+	    display: grid;
+            background-color: red;
+            width: 80vh; /* Increased width for a bigger framed image */
+            height: 30vh; /* Increased height for a bigger framed image */
+            margin: 40px 20px; /* Adjusted margin to separate the framed image from the icons */
+            padding: 10px;
+            border: 2px solid;
 
-    .taskbar a {
-      color: #C0C0C0;
-      margin-right: 20px;
-    }
+            margin-left: auto;
+            margin-right: 40px;
 
-    .taskbar a:hover {
-      text-decoration: none;
-    }
-
-    .window {
-
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 10px;
+            background-color: #f1f1f1;
+            padding: 10px;
 	
+        }
 
-      position: absolute;
-      width: 19vh;
-      heaight: 16vh;
-      //width: 500px;
-      //height: 400px;
-      background-color: #f1f1f1;
-      border: 1px solid #ccc;
-      cursor: move;
-      z-index: 20;
-    }
+        .imageframe {
+            background-color: black;
+            width: 50vh; /* Increased width for a bigger framed image */
+            height: 50vh; /* Increased height for a bigger framed image */
+            margin: 40px 10px; /* Adjusted margin to separate the framed image from the icons */
+            padding: 10px;
+            border: 2px solid;
+          
+  	    
+        }
+        
+	.imageframe2 {
+            background-color: black;
+            width: 75vh; /* Increased width for a bigger framed image */
+            height: 25vh; /* Increased height for a bigger framed image */
+            margin: 40px 10px; /* Adjusted margin to separate the framed image from the icons */
+            padding: 10px;
+            border: 2px solid;
+        
+        }
 
-    .window-header {
-      height: 30px;
-      padding: 5px;
-      background-color: #ddd;
-      cursor: move;
-    }
+	.imageframe3 {
+            background-color: black;
+            width: 10vh; /* Increased width for a bigger framed image */
+            height: 50vh; /* Increased height for a bigger framed image */
+            margin: 40px 10px; /* Adjusted margin to separate the framed image from the icons */
+            padding: 10px;
+            border: 2px solid;
+        
+        }
 
-    .window-content {
-      padding: 10px;
-    }
-    
-    .window-content-2 {
-      display: none;
-      padding: 10px;
-    }
-
-    .window-button {
-      float: right;
-      margin-left: 5px;
-      cursor: pointer;
-    }
-  </style>
-  <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      const windows = document.getElementsByClassName('window');
-      Array.from(windows).forEach((window) => {
-        makeDraggable(window);
-      });
-    });
-
-    function makeDraggable(element) {
-      let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-      const header = element.getElementsByClassName('window-header')[0];
-      if (header) {
-        header.onmousedown = dragMouseDown;
-      } else {
-        element.onmousedown = dragMouseDown;
-      }
-
-      function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-      }
-
-      function elementDrag(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        element.style.top = element.offsetTop - pos2 + 'px';
-        element.style.left = element.offsetLeft - pos1 + 'px';
-      }
-
-      function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-      }
-    }
-
-    function toggleMinimize(elementId) {
-      const element = document.getElementById(elementId);
-      const content = element.getElementsByClassName('window-content')[0];
-      const content2 = element.getElementsByClassName('window-content-2')[0];
-      const minimizeButton = element.getElementsByClassName('window-button')[0];
-      if (content.style.display === 'none') {
-        content.style.display = 'block';
-        content2.style.display = 'none';
-        minimizeButton.textContent = 'SHOW!';
-      } else {
-        content.style.display = 'none';
-        content2.style.display = 'block';
-        minimizeButton.textContent = 'X';
-      }
-  // Update frame image source based on the last interacted window
-  const frameImage = document.getElementById('frame-image');
-  switch (elementId) {
-    case 'window1':
-      frameImage.src = 'https://i.imgur.com/FSQJ0UL.png';
-      break;
-    case 'window2':
-      frameImage.src = 'https://assets.objkt.media/file/assets-003/QmUbpv9bDfyE3bBr9qptSRZtQ5ARYT1axMAJ8sbBJGEwei/artifact';
-      break;
-    // Add more cases for other windows as needed
-	case 'window3':
-      	frameImage.src = 'https://i.imgur.com/tY9xvky.gif';
-     	 break;
-	
-	case 'window4':
-      	frameImage.src = 'https://i.imgur.com/FjB9im4.png';
-     	 break;
-	case 'window5':
-	frameImage.src = 'https://i.imgur.com/FiuAwQ2.gif';
-     	 break;
-
-	case 'window6':
-	frameImage.src = 'https://i.imgur.com/gwpF6Xy.png';
-     	 break;
-	case 'window13':
-	frameImage.src = 'https://i.imgur.com/wZ6TyWe.gif';
-     	break;
-	
-
-    default:
-      frameImage.src = 'https://i.imgur.com/MwhOVKU.jpg';
-	 break;
-  }
-    }
-  </script>
+        .imageframe img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
 </head>
 <body>
+	
+    <div id="desktop">
 
-<div class="window" id="window1" style="top: 20px; left: 20px;" >
-    <div class="window-header">
-      bleu281
-      <span class="window-button" onclick="toggleMinimize('window1')">SHOW!</span>
+        <a class="icon" onclick="updateImage('https://i.imgur.com/FiuAwQ2.gif', 'Francoise Gamma is a digitally embodied entity using the internet to draw animated GIFS (for Netscape 3.04). Its work has appeared on Kanye Wests blog, in solo exhibitions, and all around the WWW.')">
+            <img src="https://i.imgur.com/FiuAwQ2.gif" alt="Icon 1">
+            <label>Francoise Gamma</label>
+        </a>
+        <a class="icon" onclick="updateImage('https://i.imgur.com/wZ6TyWe.gif', 'V5MTs artistic practice has always focused on experimental animation. She has been exploring versatile aesthetics and diverse techniques since she started releasing her GIFs on Tumblr back in 2010. For the next few years she took part in many notable URL & IRL art projects and events and had her works exhibited at venues such as Whitney Museum of American Art, MoMA, Museum of the Moving Image, Transfer Gallery - in New York City, Barbican Centre in London or Transmediale Festival in Berlin, and also featured in numerous publications including: VICE Magazine, IDEA Magazine, DAZED DIGITAL, WIRED, DIS Magazine, OFluxo, and most recently - Instagram Hello World series. Throughout her career V5MT has worked with a wide range of industries and clients, including brands like SPECIALIZED, GIPHY and Microsoft.  In recent years she has been specialising in designing animated stickers, that can be found in popular Apps like: Snapchat, Instagram, Kinemaster, Clipchamp on Windows, and many more. In early 2021 V5MT entered NFT space where she reunited with her artist friends from her net art time, and met many more new ones, mostly via Tezos art community, in which she’s been engaged, and participated in Hicathon hackathon and Post-Hicathon, where she was part of hen radio team. She was featured in THE TICKLE zine, with an interview and as the author of The TICKLE Token. V5MT is one of the selected artists in objkt.one curated collection of 1/1s. She also took part in some exciting NFT collaborations, with the most notable being a group animated piece directed by Scorpion Dagger. (Fun fact: the artwork caught the eye of SLASH from Guns N Roses who shared it across his social media.😁) V5MTs mints can be also found on Ethereum and Solana marketplaces. v5mt.net art.v5mt.net')">
+            <img src="https://i.imgur.com/wZ6TyWe.gif" alt="Icon 2">
+            <label>V5MT</label>
+        </a>
+
+        <a class="icon" onclick="updateImage('https://f8n-production-collection-			assets.imgix.net/0x9C170e8e616fdBf61934946a282656eE9b24a28D/40/nft.png?q=80&auto=format%2Ccompress&cs=srgb&w=3000&h=3000		&fit=max', 'Digital and Traditional Painter')">
+            <img src="https://f8n-production-collection-assets.imgix.net/0x9C170e8e616fdBf61934946a282656eE9b24a28D/40/nft.png?q=80&auto=format%2Ccompress&cs=srgb&w=3000&h=3000&fit=max" alt="Icon 3">
+            <label>Danilo Xhema</label>
+        </a>
+
+        <a class="icon" onclick="updateImage('https://i.imgur.com/q20XbCk.png', 'Emiliano, better known as k0ch, is a multidisciplinary Argentinian artist who lives in Spain. Trained as a programmer and software developer, he has worked in diverse areas such as generative art, interactive installations, sound art, collage, and performance. His works often explore the relationship between humanity, technology, and nature.')">
+            <img src="https://i.imgur.com/q20XbCk.png" alt="Icon 4">
+            <label>k0ch</label>
+        </a>
+
+	 </a>
+        <a class="icon" onclick="updateImage('https://i.imgur.com/WbHK5ks.gif', 'Lucas Lejeune is a French multimedia artist based in Strasbourg, who explores the possibilities and limitations of digital technology. He primarily uses text, video, graphic animation, and editing to probe the connections between humans and machines, the natural and the synthetic, and the past and future. His visual work is complemented by a conceptual  approach, focused on reflection and reinterpretation of history, culture, and language systems. In doing so, he explores how new technologies enable us to rethink our place in the world and reconnect  with our deep humanity. He is also interested in the ethical and social issues raised by the emergence of artificial intelligence, as well as the question of authorship, and hopes to contribute to a deeper reflection  on these subjects. His main mediums are video, gifs, and  micro-publishing.')">
+            <img src="https://i.imgur.com/WbHK5ks.gif" alt="Icon 4">
+            <label>Lucas Lejeune</label>
+        </a>
+
+	<a class="icon" onclick="updateImage('https://i.imgur.com/AAcRvpP.gif', 'Datura is a French designer, art director, 3D modeler, and digital artist based in Paris. Her work revolves around generative and animated landscapes or objects, which are created by manipulating 3D scenes using a cellular automaton. By selecting specific parameters or rules, this artistic process generates distinctive shapes, colors, patterns, textures such as weaving hatchings, and movements.')">
+            <img src="https://i.imgur.com/AAcRvpP.gif" alt="Icon 4">
+            <label>Datura</label>
+        </a>
+
+	<a class="icon" onclick="updateImage('https://i.imgur.com/0UzZb7S.gif', '🐷 GIFS AND IMAGE MAKER🐸 POST-WEB PROJECT EYECOLOR: GRAY🐶 RELIGION: 25FPS')">
+            <img src="https://i.imgur.com/0UzZb7S.gif" alt="Icon 4">
+            <label>mostwrongking</label>
+        </a>
+
+	<a class="icon" onclick="updateImage('https://i.imgur.com/SwqQBQk.gif', 'bleu281 is a german digital artist using GIMP to create intricate patterns and repetitions.')">
+            <img src="https://i.imgur.com/SwqQBQk.gif" alt="Icon 4">
+            <label>bleu281</label>
+        </a>
+
+	<a class="icon" onclick="updateImage('https://i.imgur.com/TEbokm7.gif', 'Nicholas Dietrich//Born UK, 1981//BA Fine Art 2003//Currently based in Dublin, Ireland// After being a physical painter for more than twenty years, Nicholas work has naturally developed into experimental pixel painting. His main area of interest is how our thinking is affected by science and how this can be reflected in art. His most significant influence is early Twentieth Century painting.')">
+            <img src="https://i.imgur.com/TEbokm7.gif" alt="Icon 4">
+            <label>Nicholas Dietrich</label>
+        </a>
+
+	<a class="icon" onclick="updateImage('https://i.imgur.com/BWmKcK2.gif', 'Bio 10')">
+            <img src="https://i.imgur.com/BWmKcK2.gif" alt="Icon 4">
+            <label>ugo</label>
+        </a>
+
+	<a class="icon" onclick="updateImage('https://i.imgur.com/FjB9im4.png', 'Experimental pixel art as the medium for observing and thinking about all things.')">
+            <img src="https://i.imgur.com/FjB9im4.png" alt="Icon 4">
+            <label>Element Lee</label>
+        </a>
+
+	<a class="icon" onclick="updateImage('https://i.imgur.com/MwhOVKU.jpg', 'Bio 11')">
+            <img src="https://i.imgur.com/MwhOVKU.jpg" alt="Icon 4">
+            <label>Zhecon</label>
+        </a>
+	
+	
+	
+
     </div>
-    <div class="window-content">
-      <div class="gif-container">
-        <img src="https://i.imgur.com/FSQJ0UL.png" alt="GIF">
-      </div>
-      <p>Control Unit 1 - 2023</p>
+    
+ <div class="grid-container">
+
+		<div class="imageframe3">
+	
+        <p>N3XTWAVE</p>
     </div>
-    <div class="window-content-2">
-      <p>bleu281 is a german digital artist creating unusual patterns and </p>
+    
+    <div class="imageframe">
+        <img id="displayed-image" src="https://i.imgur.com/FiuAwQ2.gif" alt="Displayed Image">
     </div>
-  </div>
+    
 
 
-  <div class="window" id="window2" style="top: 50px; left: 50px;" >
-    <div class="window-header">
-      DanCTRL
-      <span class="window-button" onclick="toggleMinimize('window2')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://assets.objkt.media/file/assets-003/QmXNRdDekmK4vPQU1ynuvy2ec2Lm5HYatLtBYxDEQKxcP2/artifact" 			alt="GIF">
-      </div>
-      <p>This is the content of Window 2.</p>
-    </div>
-    <div class="window-content-2">
-      <p>This is the minimized content of Window 2.</p>
-    </div>
-  </div>
-
- 
-  <div class="window" id="window3" style="top: 80px; left: 80px;">
-    <div class="window-header">
-      Datura
-      <span class="window-button" onclick="toggleMinimize('window3')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://i.imgur.com/tY9xvky.gif" 			alt="GIF">
-      </div>
-      <p>Panorama. Lake</p>
-    </div>
-    <div class="window-content-2">
-      <p>Datura is a French designer, art director, 3D modeler, and digital artist based in Paris. 
-
-Her work revolves around generative and animated landscapes or objects, which are created by manipulating 3D scenes using a cellular automaton. 
-
-By selecting specific parameters or rules, this artistic process generates distinctive shapes, colors, patterns, textures (such as weaving hatchings), and movements.
 
 
-</p>
+	
+</div> 
+<div class="grid-container2">
+    <div class="imageframe2">
+	
+        <p id="bio-text">Francoise Gamma is a digitally embodied entity using the internet to draw animated GIFS (for Netscape 3.04). Its work has appeared on Kanye  West's blog,  in solo exhibitions, and all around the WWW.</p>	
     </div>
-  </div>
-
-
-  <div class="window" id="window4" style="top: 110px; left: 110px;">
-    <div class="window-header">
-      Element Lee
-      <span class="window-button" onclick="toggleMinimize('window4')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://i.imgur.com/FjB9im4.png" 			alt="GIF">
-      </div>
-      <p>Element Lee</p>
-    </div>
-    <div class="window-content-2">
-      <p>Experimental pixel art as the medium for observing and thinking about all things.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window5" style="top: 140px; left: 140px;">
-    <div class="window-header">
-      Francoise Gamma
-      <span class="window-button" onclick="toggleMinimize('window5')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://i.imgur.com/FiuAwQ2.gif" 			alt="GIF">
-      </div>
-      <p>This is the content of Window 2.</p>
-    </div>
-    <div class="window-content-2">
-      <p>Francoise Gamma is a digitally embodied entity using the internet to draw animated GIFS (for Netscape 3.04). Its work has appeared on Kanye  West's blog,  in solo exhibitions, and all around the WWW.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window6" style="top: 170px; left: 170px;">
-    <div class="window-header">
-      k0ch
-      <span class="window-button" onclick="toggleMinimize('window6')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://i.imgur.com/gwpF6Xy.png" 			alt="GIF">
-      </div>
-      <p>Lay The Book On The Glass - 2023</p>
-    </div>
-    <div class="window-content-2">
-      <p>Emiliano, better known as k0ch, is a multidisciplinary Argentinian artist who lives in Spain. Trained as a programmer and software developer, he has worked in diverse areas such as generative art, interactive installations, sound art, collage, and performance. His works often explore the relationship between humanity, technology, and nature.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window7" style="top: 200px; left: 200px;">
-    <div class="window-header">
-      Kosmotekton
-      <span class="window-button" onclick="toggleMinimize('window7')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://assets.objkt.media/file/assets-003/QmXNRdDekmK4vPQU1ynuvy2ec2Lm5HYatLtBYxDEQKxcP2/artifact" 			alt="GIF">
-      </div>
-      <p>This is the content of Window 2.</p>
-    </div>
-    <div class="window-content-2">
-      <p>This is the minimized content of Window 2.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window8" style="top: 230px; left: 230px;">
-    <div class="window-header">
-      Laura Adel
-      <span class="window-button" onclick="toggleMinimize('window8')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://assets.objkt.media/file/assets-003/QmXNRdDekmK4vPQU1ynuvy2ec2Lm5HYatLtBYxDEQKxcP2/artifact" 			alt="GIF">
-      </div>
-      <p>This is the content of Window 2.</p>
-    </div>
-    <div class="window-content-2">
-      <p>This is the minimized content of Window 2.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window9" style="top: 260px; left: 260px;">
-    <div class="window-header">
-      Lucas Lejeune
-      <span class="window-button" onclick="toggleMinimize('window9')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://assets.objkt.media/file/assets-003/QmXNRdDekmK4vPQU1ynuvy2ec2Lm5HYatLtBYxDEQKxcP2/artifact" 			alt="GIF">
-      </div>
-      <p>This is the content of Window 2.</p>
-    </div>
-    <div class="window-content-2">
-      <p>Lucas Lejeune is a French multimedia artist based in Strasbourg, who explores the possibilities and limitations of digital technology. He primarily uses text, video, graphic animation, and editing to probe the connections between humans and machines, the natural and the synthetic, and the past and future. His visual work is complemented by a conceptual  approach, focused on reflection and reinterpretation of history, culture, and language systems. In doing so, he explores how new technologies enable us to rethink our place in the world and reconnect  with our deep humanity. He is also interested in the ethical and social issues raised by the emergence of artificial intelligence, as well as the question of authorship, and hopes to contribute to a deeper reflection  on these subjects. His main mediums are video, gifs, and  micro-publishing.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window10" style="top: 290px; left: 290px;">
-    <div class="window-header">
-      mostwrongking
-      <span class="window-button" onclick="toggleMinimize('window10')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://assets.objkt.media/file/assets-003/QmXNRdDekmK4vPQU1ynuvy2ec2Lm5HYatLtBYxDEQKxcP2/artifact" 			alt="GIF">
-      </div>
-      <p>This is the content of Window 2.</p>
-    </div>
-    <div class="window-content-2">
-      <p>This is the minimized content of Window 2.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window11" style="top: 320px; left: 320px;">
-    <div class="window-header">
-      Nicholas Dietrich
-      <span class="window-button" onclick="toggleMinimize('window11')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://assets.objkt.media/file/assets-003/QmXNRdDekmK4vPQU1ynuvy2ec2Lm5HYatLtBYxDEQKxcP2/artifact" 			alt="GIF">
-      </div>
-      <p>This is the content of Window 2.</p>
-    </div>
-    <div class="window-content-2">
-      <p>This is the minimized content of Window 2.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window12" style="top: 350px; left: 350px;">
-    <div class="window-header">
-      ugo
-      <span class="window-button" onclick="toggleMinimize('window12')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://assets.objkt.media/file/assets-003/QmXNRdDekmK4vPQU1ynuvy2ec2Lm5HYatLtBYxDEQKxcP2/artifact" 			alt="GIF">
-      </div>
-      <p>Freeze - 2023</p>
-    </div>
-    <div class="window-content-2">
-      <p>This is the minimized content of Window 2.</p>
-    </div>
-  </div>
-
-  <div class="window" id="window13" style="top: 380px; left: 380px;">
-    <div class="window-header">
-      v5mtv
-      <span class="window-button" onclick="toggleMinimize('window13')">SHOW!</span>
-    </div>
-    <div class="window-content">
-	<div class="gif-container">
-    	    <img src="https://i.imgur.com/wZ6TyWe.gif" alt="GIF">
-      </div>
-      <p>MOSΛIC_I - 2023</p>
-    </div>
-    <div class="window-content-2">
-      <p>V5MT's artistic practice has always focused on experimental animation. She’s been exploring versatile aesthetics and diverse techniques since she started releasing her GIFs on Tumblr back in 2010. For the next few years she took part in many notable URL & IRL art projects and events and had her works exhibited at venues such as Whitney Museum of American Art, MoMA, Museum of the Moving Image, Transfer Gallery - in New York City, Barbican Centre in London or Transmediale Festival in Berlin, and also featured in numerous publications including: VICE Magazine, IDEA Magazine, DAZED DIGITAL, WIRED, DIS Magazine, OFluxo, and most recently - Instagram ‘Hello World’ series.
-Throughout her career V5MT has worked with a wide range of industries and clients, including brands like SPECIALIZED, GIPHY and Microsoft.  In recent years she’s been specialising in designing animated stickers, that can be found in popular Apps like: Snapchat, Instagram, Kinemaster, Clipchamp on Windows, and many more.
-In early 2021 V5MT entered NFT space where she reunited with her artist friends from her net art time, and met many more new ones, mostly via Tezos art community, in which she’s been engaged, and participated in Hicathon hackathon and Post-Hicathon, where she was part of hen radio team. She was featured in THE TICKLE zine, with an interview and as the author of The TICKLE Token. V5MT is one of the selected artists in objkt.one curated collection of 1/1s. She also took part in some exciting NFT collaborations, with the most notable being a group animated piece directed by Scorpion Dagger. (Fun fact: the artwork caught the eye of SLASH from Guns N' Roses who shared it across his social media.😁)
-V5MT’s mints can be also found on Ethereum and Solana marketplaces. 
-
-v5mt.net
-art.v5mt.net
-</p>
-    </div>
-  </div>
-
-  <div class="window" id="window14" style="top: 420px; left: 420px;">
-    <div class="window-header">
-      Zhecon
-      <span class="window-button" onclick="toggleMinimize('window14')">SHOW!</span>
-    </div>
-    <div class="window-content">
-      <div class="gif-container">
-    	    <img src="https://i.imgur.com/MwhOVKU.jpg" alt="GIF">
-      </div>
-	<p>Ghost carriage daydream - 2023</p>
-    </div>
-    <div class="window-content-2">
-      <p>This is the minimized content of Window 2.</p>
-    </div>
-  </div>
-
-<p><center> Computer Love Collective </center></p>
-<div id="frame-container">
-  <img id="frame-image" src="https://i.imgur.com/MwhOVKU.jpg" alt="Frame Image">
 </div>
 
 
+    <script>
 
+	
 
-
-  <div class="taskbar">
-    <a href="#">bleu281</a>
-    <a href="#">DanCTRL</a>
-    <a href="#">Datura</a>
-    <a href="#">Element Lee</a>
-    <a href="#">Francoise Gamma</a>
-    <a href="#">k0ch</a>
-    <a href="#">Kosmotekton</a>
-    <a href="#">Laura Adel</a>
-    <a href="#">Lucas Lejeune</a>
-    <a href="#">mostwrongking</a>
-    <a href="#">Nicholas Dietrich</a>
-    <a href="#">ugo</a>
-    <a href="#">v5mtv</a>
-    <a href="#">Zhecon</a>
-  </div>
+        function updateImage(imageURL, bioText) {
+            var displayedImage = document.getElementById("displayed-image");
+            var bioParagraph = document.getElementById("bio-text");
+            
+            displayedImage.src = imageURL;
+            bioParagraph.textContent = bioText;
+        }
+    </script>
 </body>
 </html>
