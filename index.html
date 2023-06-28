@@ -45,8 +45,8 @@
     .taskbar {
 
 display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: left;
+      align-items: left;
       height: 5vh;
 
 
@@ -72,7 +72,9 @@ display: flex;
             text-align: center;
             cursor: pointer;
         }
-        
+        logo {
+		size: 5vh;
+	}
         .icon img {
             width: 50px;
             height: 50px;
@@ -141,6 +143,30 @@ display: flex;
 	
         }
 
+
+	.grid-container3 {
+
+
+	    display: grid;
+            background-color: red;
+            width: 80vh; /* Increased width for a bigger framed image */
+            height: 10vh; /* Increased height for a bigger framed image */
+            margin: 40px 20px; /* Adjusted margin to separate the framed image from the icons */
+            padding: 10px;
+            border: 2px solid;
+
+            margin-left: auto;
+            margin-right: 40px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 10px;
+            background-color: #f1f1f1;
+            padding: 10px;
+	
+        }
+
         .imageframe {
             background-color: black;
             width: 50vh; /* Increased width for a bigger framed image */
@@ -166,6 +192,19 @@ display: flex;
             background-color: black;
             width: 10vh; /* Increased width for a bigger framed image */
             height: 45vh; /* Increased height for a bigger framed image */
+            margin: 40px 10px; /* Adjusted margin to separate the framed image from the icons */
+            padding: 10px;
+            border: 2px solid;
+        
+        }
+
+
+	      }
+        
+	.imageframe4 {
+            background-color: black;
+            width: 75vh; /* Increased width for a bigger framed image */
+            height: 10vh; /* Increased height for a bigger framed image */
             margin: 40px 10px; /* Adjusted margin to separate the framed image from the icons */
             padding: 10px;
             border: 2px solid;
@@ -250,10 +289,7 @@ display: flex;
     
  <div class="grid-container">
 
-		<div class="imageframe3">
 	
-        <p>N3XTWAVE</p>
-    </div>
     
     <div class="imageframe">
         <img id="displayed-image" src="https://i.imgur.com/FiuAwQ2.gif" alt="Displayed Image">
@@ -265,6 +301,11 @@ display: flex;
 
 	
 </div> 
+
+ <div class="grid-container3">
+	<img src="https://i.imgur.com/iuZKQld.png">
+</div>
+
 <div class="grid-container2">
     <div class="imageframe2">
 	
@@ -273,15 +314,20 @@ display: flex;
 </div>
 
 
+
  <div class="grid-container">
 	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7kbuTqoadfkFT2kWJ322HhKIqAoWR7_fJ6KC6V157vJOTZw/viewform?embedded=true" width="640" height="778" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
 </div>
 
+
+
   <div class="taskbar">
-	<div class="flowing-text">
-    N3XTWAVE Collective
+<logo>
+
+</logo>
   </div>
-  </div>
+
+
 
 
     <script>
